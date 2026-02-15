@@ -92,7 +92,8 @@
     "typeorm": "TS_NODE_PROJECT=tsconfig.app.json typeorm-ts-node-commonjs",
     "migration:generate": "TS_NODE_PROJECT=tsconfig.app.json typeorm-ts-node-commonjs migration:generate -d src/config/data-source.ts",
     "migration:run": "TS_NODE_PROJECT=tsconfig.app.json typeorm-ts-node-commonjs migration:run -d src/config/data-source.ts",
-    "migration:revert": "TS_NODE_PROJECT=tsconfig.app.json typeorm-ts-node-commonjs migration:revert -d src/config/data-source.ts"
+    "migration:revert": "TS_NODE_PROJECT=tsconfig.app.json typeorm-ts-node-commonjs migration:revert -d src/config/data-source.ts",
+    "seed": "TS_NODE_PROJECT=tsconfig.app.json ts-node src/db/seed.ts"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.0",
