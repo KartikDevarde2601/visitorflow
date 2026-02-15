@@ -1,5 +1,7 @@
 const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
 const { join } = require('path');
+const nodeExternals = require('webpack-node-externals');
+const webpack = require('webpack');
 
 module.exports = {
   output: {
@@ -9,6 +11,7 @@ module.exports = {
       devtoolModuleFilenameTemplate: '[absolute-resource-path]',
     }),
   },
+  externals: [nodeExternals()],
   plugins: [
     new NxAppWebpackPlugin({
       target: 'node',
@@ -20,6 +23,9 @@ module.exports = {
       outputHashing: 'none',
       generatePackageJson: false,
       sourceMap: true,
-    })
+    }),
+    new webpack.IgnorePlugin({
+      resourceRegExp: /^class-transformer\/storage$/,
+    }),
   ],
 };
