@@ -10,30 +10,30 @@ export enum AttachmentType {
 @Entity('attachments')
 export class Attachment {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @ManyToOne(() => Visit)
   @JoinColumn({ name: 'visit_id' })
-  visit: Visit;
+  visit!: Visit;
 
   @Column({
     type: 'enum',
     enum: AttachmentType,
   })
-  type: AttachmentType;
+  type!: AttachmentType;
 
   @Column()
-  url: string;
+  url!: string;
 
   @Column()
-  bucket: string;
+  bucket!: string;
 
   @Column()
-  key: string;
+  key!: string;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt!: Date;
 }

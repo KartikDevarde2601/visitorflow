@@ -14,11 +14,11 @@ export enum VisitStatus {
 @Entity('visits')
 export class Visit {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @ManyToOne(() => Visitor)
   @JoinColumn({ name: 'visitor_id' })
-  visitor: Visitor;
+  visitor!: Visitor;
 
   @ManyToOne(() => User, { nullable: true })
   @JoinColumn({ name: 'host_id' })
@@ -33,10 +33,10 @@ export class Visit {
     enum: VisitStatus,
     default: VisitStatus.PENDING,
   })
-  status: VisitStatus;
+  status!: VisitStatus;
 
   @Column()
-  purpose: string;
+  purpose!: string;
 
   @Column({ type: 'timestamp', nullable: true })
   entryTime?: Date;
@@ -45,14 +45,14 @@ export class Visit {
   exitTime?: Date;
 
   @Column({ type: 'timestamp' })
-  expectedTime: Date;
+  expectedTime!: Date;
 
   @Column({ nullable: true })
   qrCodeHash?: string;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt!: Date;
 }

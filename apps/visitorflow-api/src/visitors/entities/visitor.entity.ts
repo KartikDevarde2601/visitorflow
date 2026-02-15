@@ -9,13 +9,13 @@ export enum VisitorType {
 @Entity('visitors')
 export class Visitor {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column({ unique: true })
-  phone: string;
+  phone!: string;
 
   @Column()
-  name: string;
+  name!: string;
 
   @Column({ nullable: true })
   company?: string;
@@ -25,11 +25,11 @@ export class Visitor {
     enum: VisitorType,
     default: VisitorType.GUEST,
   })
-  type: VisitorType;
+  type!: VisitorType;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt!: Date;
 }
