@@ -4,13 +4,7 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/visitorflow-api-e2e"
-    },
-    {
       "path": "./apps/visitorflow-api"
-    },
-    {
-      "path": "./apps/visitorflow-web-e2e"
     },
     {
       "path": "./apps/visitorflow-web"
